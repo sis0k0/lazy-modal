@@ -1,0 +1,13 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <Button text="Route to lazy page" nsRouterLink="/lazy" class="btn btn-primary"></Button>
+    <Button text="Lazily load in Modal" (tap)="openModal()" class="btn btn-primary"></Button>
+    
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</StackLayout>
