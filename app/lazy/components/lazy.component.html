@@ -1,10 +1,4 @@
-<ActionBar title="Routed to Lazy" icon="" class="action-bar">
-</ActionBar>
 <StackLayout>
-    <GridLayout rows="auto" columns="auto" [visibility]="isModal ? 'visible' : 'collapsed'">
-        <Button text="Close Lazy Modal" (tap)="close()" class="btn action-item" row="0" col="0"></Button>
-    </GridLayout>
-    <StackLayout class="p-20">
-        <Label [text]="'Lazily loaded via ' + (isModal ? 'modal' : 'route') + '!'" textWrap="true" class="h1"></Label>
-    </StackLayout>
+    <Label text="Lazily loaded!"></Label>
+    <Button text="Close Lazy Modal" (tap)="close()"></Button>
 </StackLayout>
