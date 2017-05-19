@@ -10,7 +10,9 @@ import { Routes } from '@angular/router';
 // app
 import { LazyComponent } from './components/lazy.component';
 
-const defaultModalParams = new ModalDialogParams({}, null);
+export function modalParamsFactory() {
+    return new ModalDialogParams({}, null);
+}
 
 const routes: Routes = [
   {
@@ -33,7 +35,7 @@ const routes: Routes = [
   providers: [
     // allows same component to be routed to 
     // or lazily loaded via modal
-    { provide: ModalDialogParams, useValue: defaultModalParams }
+    { provide: ModalDialogParams, useFactory: modalParamsFactory }
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
